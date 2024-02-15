@@ -1,4 +1,3 @@
-import DefImg from "../../assets/thumb.png";
 import { getFormattedDate } from "../../utils/format-date";
 
 /* eslint-disable react/prop-types */
@@ -20,11 +19,8 @@ export default function LeftNewsCardTwo({ article }) {
       </div>
 
       <div className="col-span-12 md:col-span-6">
-        <img
-          className="w-full"
-          src={article?.urlToImage ? article?.urlToImage : DefImg}
-          alt="thumb"
-        />
+        {!article?.urlToImage && <p>News image not provided</p>}
+        <img className="w-full" src={article?.urlToImage} alt="thumb" />
       </div>
     </div>
   );
